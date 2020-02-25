@@ -1,0 +1,141 @@
+{%extends "student/base.html"%}
+{% load crispy_forms_tags %}
+
+{%block title%}REGISTRATION FORM{%endblock%}
+{%block body%}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="POST" action="."> {%csrf_token%}
+            <!-- {{form|crispy}} -->
+            <div class="form-row">
+                <div class="col col-sm-4 col-md-4 mb-3">
+                  <label for="validationServer01">First name</label>
+                  {{form.First_name}}
+                  <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col col-sm-4 col-md-4 mb-3">
+                    <label for="validationServer02">Last name</label>
+                    {{form.Last_name}}
+                    <!-- <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    </div>
+                    <div class="col col-sm-4 col-md-4">
+                        <label for="validationServer03">Father name</label>
+                        {{form.Father_name}}
+                        <!-- <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+            </div>
+                    <div class="form-row">
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="validationServer04">Mother name</label>
+                        {{form.Mother_name}}
+                        <!-- <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4 mb-3" >
+                            <label for="datetimepicker1">Dob</label>
+                         {{form.Date_of_birth}}
+                        <!-- <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required> -->
+                        <!-- <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                          </div> -->
+                          <!-- id="datetimepicker1" data-target-input="nearest" -->
+                        </div>
+                    
+                        <div class="col-sm-4 col-md-4 mb-3">
+                            <label  for="inlineFormInputGroupEmail">Email</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                              </div>
+                              {{form.Email_id}}
+                              <!-- <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-4 col-md-4 mb-3">
+                            <label  for="inlineFormInputGroupTel">Tel</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                              </div>
+                              {{form.Mobile_no}}
+                              <!-- <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username"> -->
+                            </div>
+                          
+                        </div>
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="validationServer1">Admission Number</label>
+                            {{form.Admission_no}}
+                            <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="validationServer2">Gender</label>
+                            {{form.Gender}}
+                            <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="inputAddress">Address</label>
+                            {{form.Address}}
+
+                        </div>
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="exampleFormControlSelect2">Courses</label>
+                             {{form.courses}}
+                        </div>
+
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="exampleFormControlSelect3">Country</label>
+                            {{form.countries}}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="city">City</label>
+                            {{form.City}}
+                        </div>
+                        <div class="col col-sm-4 col-md-4 mb-3">
+                            <label for="slug">Slug</label>
+                            {{form.slug}}
+                        </div>
+                    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            </div>
+            </div>
+      
+</div>
+
+
+{%endblock%}
+{%block script%}
+<script>
+$(function () {
+    console.log("hello")
+    $("#datetimepicker1").datepicker({
+      dateFormat: 'yy-mm-dd',
+    });
+  });
+</script>
+
+{%endblock%}
